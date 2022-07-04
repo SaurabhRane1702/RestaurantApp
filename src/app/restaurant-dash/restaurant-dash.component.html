@@ -2,7 +2,14 @@
   <div class="container-fluid">
     <h2>Restuarant Records Apps</h2>
     <div class="d-flex">
-      <button class="btn btn-success">Add Restaurant</button>
+      <button
+        type="button"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Add Restaurant
+      </button>
     </div>
   </div>
 </nav>
@@ -11,7 +18,7 @@
   <div class="container-fluid py-5">
     <h1 class="display-5 fw-bold">Restaurant Records Management</h1>
     <p class="col-md-8 fs-4">
-      You can save records of restuarnats usinf Angular 12
+      You can save records of restuarnats using Angular 12
     </p>
     <a
       class="btn btn-primary btn-lg"
@@ -51,3 +58,99 @@
     </tr>
   </tbody>
 </table>
+
+<!--Modal Starts Here-->
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name Of Restuarant</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="name"
+              id="exampleInputEmail1"
+              aria-describedby="nameHelp"
+              placeholder="Resaurant Name Goes Here"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Mobile</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              formControlName="mobile"
+              aria-describedby="emailHelp"
+              placeholder="Enter mobile here"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              formControlName="address"
+              aria-describedby="emailHelp"
+              placeholder="Enter Address Here"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Services</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              formControlName="services"
+              aria-describedby="emailHelp"
+              placeholder="What type of services do you provide?"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Add Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal Ends Here-->
