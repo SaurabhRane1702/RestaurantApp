@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
       "id": 2,
       "name": "Saurabh",
       "email": "saurabh.r@gmail.com",
@@ -37,13 +32,7 @@
       "services": "Food"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

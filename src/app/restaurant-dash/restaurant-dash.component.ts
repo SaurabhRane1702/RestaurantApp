@@ -54,4 +54,12 @@ export class RestaurantDashComponent implements OnInit {
       this.allRestaurantData = res;
     });
   }
+
+  //Delete record from table
+  deleteRestaurantData(data: any) {
+    this.api.deleteRestaurant(data.id).subscribe((res) => {
+      alert('Restaurant Data Deleted Successfully');
+      this.getAllData(); //so that page refresh dynamically
+    });
+  }
 }
