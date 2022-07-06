@@ -11,6 +11,7 @@ import { RestaurantData } from './restaurant.model';
 export class RestaurantDashComponent implements OnInit {
   formValue!: FormGroup;
   restaurantModelObj: RestaurantData = new RestaurantData();
+  allRestaurantData: any;
   constructor(private formBuilder: FormBuilder, private api: ApiService) {}
 
   ngOnInit(): void {
@@ -21,6 +22,9 @@ export class RestaurantDashComponent implements OnInit {
       address: [''],
       services: [''],
     });
+
+    //call this on page load
+    this.getAllData();
   }
 
   //Now Subscribing Our Data which is maped from services
@@ -36,10 +40,18 @@ export class RestaurantDashComponent implements OnInit {
         console.log(res);
         alert('Restaurant Records added Successfully');
         this.formValue.reset();
+        this.getAllData(); //this is called so that page refresh is not reuired if data is added
       },
       (err) => {
         alert('Something went wrong');
       }
     );
+  }
+
+  //Get all data
+  getAllData() {
+    this.api.getRestaurant().subscribe((res) => {
+      this.allRestaurantData = res;
+    });
   }
 }
