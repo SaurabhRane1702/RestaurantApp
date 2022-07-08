@@ -7,6 +7,7 @@
         class="btn btn-success"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
+        (click)="onClickAddRestuarant()"
       >
         Add Restaurant
       </button>
@@ -56,7 +57,14 @@
       <td>Konkan Village</td>
       <td>Food</td> -->
       <td>
-        <button class="btn btn-info">Edit</button>&nbsp;
+        <button
+          class="btn btn-info"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          (click)="onEditRestaurantData(data)"
+        >
+          Edit</button
+        >&nbsp;
         <button class="btn btn-danger" (click)="deleteRestaurantData(data)">
           delete
         </button>
@@ -78,7 +86,9 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">
+          Restaurant Records Form
+        </h5>
         <button
           type="button"
           class="close"
@@ -154,8 +164,24 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary" (click)="addRestaurant()">
+        <button type="button" class="btn btn-warning" (click)="onClickOfClearBtn()">
+          Clear
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          *ngIf="showAdd"
+          (click)="addRestaurant()"
+        >
           Add Details
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="updateRestaurant()"
+          *ngIf="showUpdate"
+        >
+          Update Details
         </button>
       </div>
     </div>
