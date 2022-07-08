@@ -7,12 +7,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestauaurantAppComponent } from './restauaurant-app/restauaurant-app.component';
 import { RestaurantDashComponent } from './restaurant-dash/restaurant-dash.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestauaurantAppComponent,
     RestaurantDashComponent,
+    LoginComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
