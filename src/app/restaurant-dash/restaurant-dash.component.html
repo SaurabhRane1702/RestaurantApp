@@ -11,6 +11,7 @@
       >
         Add Restaurant
       </button>
+      <button class="btn btn-danger mx-3" routerLink="/login">Log out</button>
     </div>
   </div>
 </nav>
@@ -164,7 +165,11 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-warning" (click)="onClickOfClearBtn()">
+        <button
+          type="button"
+          class="btn btn-warning"
+          (click)="onClickOfClearBtn()"
+        >
           Clear
         </button>
         <button

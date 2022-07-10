@@ -7,7 +7,7 @@
           <h5>Please login to enjoy our services</h5>
           <hr class="horzontal-line" />
         </div>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="logIn()">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input
@@ -15,6 +15,7 @@
               class="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              formControlName="email"
               placeholder="Enter email"
             />
             <small id="emailHelp" class="form-text text-muted"
@@ -27,12 +28,13 @@
               type="password"
               class="form-control"
               id="exampleInputPassword1"
+              formControlName="password"
               placeholder="Password"
             />
           </div>
           <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        <a routerLink="/sign-up" class="mt-2"
+        <a class="singUpLink" routerLink="/sign-up" class="mt-2"
           >Are you a New User? Please Sign Up!</a
         >
       </div>
