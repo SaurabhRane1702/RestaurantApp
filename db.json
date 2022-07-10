@@ -32,6 +32,15 @@
       "services": "Food"
     }
   ],
+  "sign-up": [
+    {
+      "name": "Saurabh",
+      "mobile": "96643415554",
+      "email": "saurabh.r@gmail.com",
+      "password": "Password",
+      "id": 1
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"
